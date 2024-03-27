@@ -16,7 +16,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
 import java.util.UUID;
 
 @Slf4j
@@ -29,10 +28,6 @@ public class ProdutoService {
 
     @Autowired
     private ProdutoMapper produtoMapper;
-
-    @Autowired
-    private RespostaService respostaService;
-
 
     public Page<Produto> buscarTodos(Pageable pageable){
         log.info("[00] ProdutoService :: buscarTodos ");

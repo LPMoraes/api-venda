@@ -27,7 +27,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -50,9 +49,6 @@ public class PedidoService {
 
     @Autowired
     private ItemPedidoMapper itemMapper;
-
-    @Autowired
-    private RespostaService respostaService;
 
     private static Double DOUBLE_HUNDRED = Double.valueOf(100.0);
 

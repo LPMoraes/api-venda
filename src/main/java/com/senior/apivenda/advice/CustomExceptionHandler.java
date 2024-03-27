@@ -2,9 +2,7 @@ package com.senior.apivenda.advice;
 
 import com.senior.apivenda.advice.exception.*;
 import com.senior.apivenda.model.dto.RespostaDto;
-import com.senior.apivenda.service.RespostaService;
 import jakarta.validation.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;

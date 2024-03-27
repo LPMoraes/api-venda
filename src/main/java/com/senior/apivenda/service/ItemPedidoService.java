@@ -17,7 +17,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -37,9 +36,6 @@ public class ItemPedidoService {
 
     @Autowired
     private ItemPedidoMapper itemPedidoMapper;
-
-    @Autowired
-    private RespostaService respostaService;
 
     public Page<ItemPedidoSaidaDto> buscarTodos(Pageable pageable){
         log.info("[00] ItemPedidoService :: buscarTodos ");

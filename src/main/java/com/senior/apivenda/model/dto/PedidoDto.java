@@ -2,7 +2,6 @@ package com.senior.apivenda.model.dto;
 
 import com.senior.apivenda.model.enums.FormaPagamentoEnum;
 import com.senior.apivenda.model.enums.StatusPedidoEnum;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;

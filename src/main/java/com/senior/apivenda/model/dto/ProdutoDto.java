@@ -12,7 +12,7 @@ public class ProdutoDto implements Serializable {
     private UUID id;
     private String nome;
     private String descricao;
-    private BigDecimal valor;
+    private BigDecimal valorUnitario;
     private Integer quantidade;
     private TipoDemandaEnum tipoDemanda;
     private Boolean ativo;

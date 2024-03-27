@@ -15,7 +15,7 @@ public class ProdutoMapper {
         Produto produto = new Produto();
         produto.setNome(dto.getNome());
         produto.setDescricao(dto.getDescricao());
-        produto.setValorUnitario(dto.getValor());
+        produto.setValorUnitario(dto.getValorUnitario());
         produto.setQuantidade(dto.getQuantidade());
         produto.setTipoDemanda(TipoDemandaEnum.valueOfTipo(dto.getTipoDemanda()));
         produto.setDataInclusao(LocalDateTime.now());
@@ -26,7 +26,7 @@ public class ProdutoMapper {
     public void mapper(Produto produto, ProdutoDto dto){
         produto.setNome(dto.getNome());
         produto.setDescricao(dto.getDescricao());
-        produto.setValorUnitario(dto.getValor());
+        produto.setValorUnitario(dto.getValorUnitario());
         produto.setQuantidade(dto.getQuantidade());
         produto.setTipoDemanda(TipoDemandaEnum.valueOfTipo(dto.getTipoDemanda()));
         produto.setDataAlteracao(LocalDateTime.now());
@@ -52,7 +52,7 @@ public class ProdutoMapper {
         ProdutoDto dto = itemDto.getProduto();
         produto.setId(dto.getId());
         produto.setNome(dto.getNome());
-        produto.setValorUnitario(dto.getValor());
+        produto.setValorUnitario(dto.getValorUnitario());
         produto.setTipoDemanda(TipoDemandaEnum.valueOfTipo(dto.getTipoDemanda()));
         produto.setAtivo(dto.getAtivo());
         return produto;
