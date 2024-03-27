@@ -6,7 +6,7 @@ Proposta: Desenvolvimento de API Rest para realização de vendas de produtos/se
 
 PROVA NIVEL II
 
-# Tecnologias utilizadas:
+# Tecnologias utilizadas
 
 #### 1. Tecnologias mínimas:
 
@@ -24,8 +24,9 @@ PROVA NIVEL II
 * Mockito
 * Swagger
 * Docker
+* DevTools
 
-# Requisitos da prova:
+# Requisitos da prova
 
 #### 1. Requisitos mínimos para o nível II:
 
@@ -53,19 +54,19 @@ PROVA NIVEL II
 
 # Aplicação
 
-nome: api-venda
+## Configuração da aplicação
+Todas as configurações estão apresentadas no arquivo *application.properties*, como ser visto na imagem abaixo.
 
-porta: 8084
+![Captura de tela de 2024-03-27 17-58-10](https://github.com/LPMoraes/api-venda/assets/10091268/144d04f7-574f-4cd2-9f40-8bdc69317593)
 
-OBS: Na primeira execução do projeto todas as tabelas do banco de dados usadas na API serão geradas automaticamente via Hibernate.
+## Executar projeto
+**Obs:** Na primeira execução do projeto todas as tabelas do banco de dados (usado na API) serão geradas automaticamente via Hibernate.
+Abaixo será apresentado alguns exemplos de entrada para testar a API.
 
-# Como executar projeto.
-Abaixo será apresentado alguns exemplos de entrada para testar API.
+## Produto
 
-### Produto
-
-## Criar Produto (POST)
-Endpoint: http://localhost:8084/produtos
+### Cadastrar Produto (POST)
+**Endpoint:** http://localhost:8084/produtos
 ```
 {
     "nome": "Nome Teste",
@@ -76,8 +77,8 @@ Endpoint: http://localhost:8084/produtos
 }
 ```
 
-## Atualizar Produto (PUT): 
-Endpoint: http://localhost:8084/produtos/{UUID}
+### Atualizar Produto (PUT): 
+**Endpoint:** http://localhost:8084/produtos/{UUID}
 ```
 {
     "nome": "Teste [UPDATE]",
@@ -89,10 +90,10 @@ Endpoint: http://localhost:8084/produtos/{UUID}
 }
 ```
 
-### Pedido
+## Pedido
 
-## Criar Pedido (POST)
-Endpoint: http://localhost:8084/pedidos
+### Cadastrar Pedido (POST)
+**Endpoint:** http://localhost:8084/pedidos
 ```
 {
     "formaPagamento": "BOLETO ",
@@ -121,8 +122,8 @@ Endpoint: http://localhost:8084/pedidos
 }
 ```
 
-## Atualizar Pedido (PUT)
-Endpoint: http://localhost:8084/pedidos/{UUID}
+### Atualizar Pedido (PUT)
+**Endpoint:** http://localhost:8084/pedidos/{UUID}
 ```
 {
     "formaPagamento": "CARTAO_DEBITO",
@@ -131,10 +132,10 @@ Endpoint: http://localhost:8084/pedidos/{UUID}
 }
 ```
 
-### Item de Pedido
+## Item de Pedido
 
-## Criar Item de Pedido (POST)
-Endpoint: http://localhost:8084/itens
+### Cadastrar Item de Pedido (POST)
+**Endpoint:** http://localhost:8084/itens
 ```
 {
     "pedido": {
@@ -146,8 +147,8 @@ Endpoint: http://localhost:8084/itens
 }
 ```
 
-## Atualizar Item de Pedido (PUT)
-Endpoint: http://localhost:8084/itens/{UUID}
+### Atualizar Item de Pedido (PUT)
+**Endpoint:** http://localhost:8084/itens/{UUID}
 
 Será possível atualizar o pedido e/ou produto do Item.
 ```
@@ -161,42 +162,43 @@ Será possível atualizar o pedido e/ou produto do Item.
 }
 ```
 
-# Banco de Dados:
-O nome do banco utilizado na aplicação: vendas.
+# Banco de Dados
+O nome do banco utilizado na aplicação será **vendas.**
 
-Na primeira execução do projeto todas as tabelas do banco de dados usadas na API serão geradas automaticamente via Hibernate.
+Todas as tabelas do banco de dados serão geradas automaticamente via Hibernate.
 
-#### 1. O modelo do banco (MER) utlizado no projeto:
+#### 1. O modelo do banco (MER) utilizado no projeto
+![ModeloER](https://github.com/LPMoraes/api-venda/assets/10091268/5882a5c7-28f8-4a9e-b9c7-c80b485c0fdd)
 
-![ModeloER](https://github.com/LPMoraes/api-venda/assets/10091268/74a9a1fb-fa10-45c2-b2a4-ff1df0fb020b)
-
-#### 2. Configuração de padrão para conectar ao banco.
+#### 2. Configuração de padrão para conectar ao banco
 
 ![conf-banco](https://github.com/LPMoraes/api-venda/assets/10091268/7f12697d-472d-441d-b657-2165403fe32f)
 
 #### 3 Utilizando o *Docker* podemos criar uma instância do *Postgres* para testar a API.
    
-##### 3.1 Baixar IMAGEM via DockerHub. Link da IMAGEM usada neste projeto: https://hub.docker.com/_/postgres
+##### 3.1 Baixar IMAGEM via DockerHub. 
+
+Link da IMAGEM usada neste projeto: https://hub.docker.com/_/postgres
 ```
    docker pull postgres
 ```   
-##### 3.2 Para iniciar uma instância localmente a partir da imagem baixada:
+##### 3.2 Para iniciar uma instância localmente a partir da imagem baixada
 ```
   docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 ```
 
 
-# Swagger:
+# Swagger
 
-Após executar a aplicação serão aprensatadas todos os *endpoints* da API:
+Após executar a aplicação pode-se ver todos os *endpoints* implementados na API.
+
 Link: http://localhost:8084/swagger-ui/index.html#/
 
 # Testes unitários
 
-Foram realizados os teste unitarios utilizando *JUnit 5* juntamente com *Mockito*.
+Foram realizados os testes unitarios utilizando *JUnit 5* juntamente com *Mockito*.
 
 A imagem mostrar a cobertura 100% completa para os pacotes *resource* e *service*.
+
 ![Teste-unitarios](https://github.com/LPMoraes/api-venda/assets/10091268/c92d989a-4205-4889-bf44-e8d5f22c3bd2)
-
-
 
